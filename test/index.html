@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>eltag.js</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <script src="../eltag.js"></script>
+  <script>
+    const { renderElement, app, range, p, span, button } = ElTag;
+
+    const main = app({
+      state: { ctr: 1 }
+    }, [
+      p(range(0, 5, (idx, ctx) => span({ 
+        class: 'counter',
+        state: { offset: idx },
+        render: () => this.parent.state.ctr + this.state.offset
+      }))),
+      button({
+        onclick: () => this.setState({ ctr: Math.max(0, this.state.ctr - 1) })
+      }, '-'),
+      button({
+        onclick: () => this.setState({ ctr: this.state.ctr + 1})
+      }, '+')
+    ]);
+
+    renderElement(document.body, main);
+  </script>
+</body>
+</html>
