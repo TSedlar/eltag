@@ -14,7 +14,7 @@ Supports all of the below in under 5kb!:
 - All style variables
 - All event listeners
 
-### Retrieving
+### Retrieving:
 
 JSDelivr kindly hosts this script [here](https://www.jsdelivr.com/package/gh/TSedlar/eltag)
 
@@ -50,7 +50,7 @@ JSDelivr kindly hosts this script [here](https://www.jsdelivr.com/package/gh/TSe
 </script>
 ```
 
-### Personal PageSpeed Result
-[source code](https://github.com/TSedlar/tsedlar.github.io/blob/master/index.html)
+### Personal PageSpeed Result:
+[Test page source](https://github.com/TSedlar/tsedlar.github.io/blob/master/index.html)
 
 ![](test/pagespeed.png)
