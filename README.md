@@ -6,7 +6,7 @@
 
 [![](https://data.jsdelivr.com/v1/package/gh/TSedlar/eltag/badge)](https://www.jsdelivr.com/package/gh/TSedlar/eltag)
 
-An HTML Tag Component Micro-framework
+A blazing fast HTML Tag Component Micro-framework
 
 Supports all of the below in under 5kb!:
 - Component states
@@ -49,3 +49,8 @@ JSDelivr kindly hosts this script [here](https://www.jsdelivr.com/package/gh/TSe
   renderElement(document.body, main);
 </script>
 ```
+
+### Personal PageSpeed Result
+[source code](https://github.com/TSedlar/tsedlar.github.io/blob/master/index.html)
+
+![](test/pagespeed.png)
