@@ -4,7 +4,7 @@
 [![](https://img.shields.io/badge/donate-patreon-orange.svg)](https://www.patreon.com/bePatron?c=954360)
 [![](https://img.shields.io/badge/donate-paypal-blue.svg)](https://paypal.me/TSedlar)
 
-[![](https://data.jsdelivr.com/v1/package/gh/TSedlar/pseudo-styler/badge)](https://www.jsdelivr.com/package/gh/TSedlar/pseudo-styler)
+[![](https://data.jsdelivr.com/v1/package/gh/TSedlar/eltag/badge)](https://www.jsdelivr.com/package/gh/TSedlar/eltag)
 
 An HTML Tag Component Micro-framework
 
@@ -16,7 +16,7 @@ JSDelivr kindly hosts this script [here](https://www.jsdelivr.com/package/gh/TSe
 <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/TSedlar/eltag@1.0.0/eltag.js'>
 ```
 
-[codepen](https://codepen.io/tsedlar/pen/?)
+[codepen](https://codepen.io/tsedlar/pen/https://codepen.io/tsedlar/pen/MLzyPE?editors=1000)
 
 ```html
 <script>
