@@ -8,17 +8,23 @@
 
 An HTML Tag Component Micro-framework
 
+Supports all of the below in under 5kb!:
+- Component states
+- Parent component states
+- All style variables
+- All event listeners
+
 ### Retrieving
 
 JSDelivr kindly hosts this script [here](https://www.jsdelivr.com/package/gh/TSedlar/eltag)
 
 ```html
-<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/TSedlar/eltag@1.0.0/eltag.js'>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/TSedlar/eltag@1.0.0/eltag.min.js'>
 ```
 
 ### Example usage:
 
-[codepen](https://codepen.io/tsedlar/pen/https://codepen.io/tsedlar/pen/MLzyPE?editors=1000)
+[codepen](https://codepen.io/tsedlar/pen/MLzyPE?editors=1000)
 
 ```html
 <script>
