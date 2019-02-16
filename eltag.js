@@ -133,12 +133,16 @@ const ElTag = {
   },
 
   el: (tag, properties={}, children=[]) => {
-    const element = document.createElement(tag);
-
-    INIT_LIST.push(element);
 
     const realProperties = Array.isArray(properties) ? {} : properties;
     let realChildren = Array.isArray(properties) ? properties : (children || []);
+
+    if (realProperties.condition && !realProperties.condition()) {
+      return null;
+    }
+
+    const element = document.createElement(tag);
+    INIT_LIST.push(element);
 
     if (typeof properties === 'string') {
       realChildren = properties;
@@ -166,6 +170,9 @@ const ElTag = {
     }
 
     for (let property in realProperties) {
+      if (property === 'style' && Object.keys(realProperties.style).length == 0) {
+        continue;
+      } 
       element[property] = realProperties[property];
     }
 
@@ -179,16 +186,18 @@ const ElTag = {
 
     if (Array.isArray(realChildren)) {
       for (let child of realChildren) {
-        if (typeof child === 'string') {
-          element.appendChild(document.createTextNode(child));
-        } else {
-          element.appendChild(child);
+        if (child) { 
+          if (typeof child === 'string') {
+            element.appendChild(document.createTextNode(child));
+          } else {
+            element.appendChild(child);
+          }
         }
       }
-    } else {
+    } else if (realChildren) {
       element.appendChild(document.createTextNode(realChildren));
     }
-
+    
     return element
   },
 

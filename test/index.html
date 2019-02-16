@@ -15,6 +15,10 @@
     const main = app({
       state: { ctr: 1 }
     }, [
+      p({
+        class: 'message',
+        condition: () => new Date().getDay() == 5
+      }, 'TGIF!'),
       p(range(0, 5, (idx, ctx) => span({ 
         class: 'counter',
         state: { offset: idx },

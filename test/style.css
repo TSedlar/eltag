@@ -30,6 +30,11 @@ button:hover {
   color: #4B6865;
 }
 
+.message {
+  font-size: 2.75em;
+  color: #EBE0A2;
+}
+
 .counter {
   font-size: 2.75em;
   margin: 10px;
