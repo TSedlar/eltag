@@ -54,11 +54,11 @@ JSDelivr kindly hosts this script [here](https://www.jsdelivr.com/package/gh/TSe
 </script>
 ```
 
+### Codepen PageSpeed Result:
+
+![](test/pagespeed-codepen.png)
+
 ### Personal PageSpeed Result:
 [Test page source](https://github.com/TSedlar/tsedlar.github.io/blob/master/index.html)
 
 ![](test/pagespeed-sedlar.png)
-
-### Codepen PageSpeed Result:
-
-![](test/pagespeed-codepen.png)
