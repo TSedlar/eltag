@@ -19,7 +19,7 @@ Supports all of the below in under 5kb!:
 JSDelivr kindly hosts this script [here](https://www.jsdelivr.com/package/gh/TSedlar/eltag)
 
 ```html
-<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/TSedlar/eltag@1.0.0/eltag.min.js'>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/TSedlar/eltag@1.0.1/eltag.min.js'>
 ```
 
 ### Example usage:
@@ -33,6 +33,10 @@ JSDelivr kindly hosts this script [here](https://www.jsdelivr.com/package/gh/TSe
   const main = app({
     state: { ctr: 1 }
   }, [
+    p({
+      class: 'message',
+      condition: () => new Date().getDay() == 5
+    }, 'TGIF!'),
     p(range(0, 5, (idx, ctx) => span({ 
       class: 'counter',
       state: { offset: idx },
