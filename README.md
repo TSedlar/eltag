@@ -53,4 +53,8 @@ JSDelivr kindly hosts this script [here](https://www.jsdelivr.com/package/gh/TSe
 ### Personal PageSpeed Result:
 [Test page source](https://github.com/TSedlar/tsedlar.github.io/blob/master/index.html)
 
-![](test/pagespeed.png)
+![](test/pagespeed-sedlar.png)
+
+### Codepen PageSpeed Result:
+
+![](test/pagespeed-codepen.png)
