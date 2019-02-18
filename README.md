@@ -19,7 +19,7 @@ Supports all of the below in under 5kb!:
 JSDelivr kindly hosts this script [here](https://www.jsdelivr.com/package/gh/TSedlar/eltag)
 
 ```html
-<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/TSedlar/eltag@1.0.1/eltag.min.js'>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/TSedlar/eltag@1.0.2/eltag.min.js'>
 ```
 
 ### Example usage:
@@ -54,9 +54,34 @@ JSDelivr kindly hosts this script [here](https://www.jsdelivr.com/package/gh/TSe
 </script>
 ```
 
-### Codepen PageSpeed Result:
+### Example usage 2:
+
+[codepen](https://codepen.io/tsedlar/pen/GzzWLy?editors=1000
+
+```html
+<script>
+  const { renderElement, app, p } = ElTag;
+
+  const main = app([
+    p({
+      class: 'message',
+      state: { ctr: 0 },
+      every: {
+        1000: () => this.setState({ ctr: this.state.ctr + 1 })
+      },
+      render: () => this.state.ctr
+    })
+  ]);
+
+  renderElement(document.body, main);
+</script>
+```
+
+### Codepen PageSpeed Results:
 
 ![](test/pagespeed-codepen.png)
+
+![](test/pagespeed-codepen2.png)
 
 ### Personal PageSpeed Result:
 [Test page source](https://github.com/TSedlar/tsedlar.github.io/blob/master/index.html)
