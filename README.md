@@ -77,6 +77,14 @@ JSDelivr kindly hosts this script [here](https://www.jsdelivr.com/package/gh/TSe
 </script>
 ```
 
+Note: every can be an array! multiple separate functions can be executed from it.
+
+```js
+every: {
+  1000: [fn1, fn2, () => { /* fn2 */ }]
+}
+```
+
 ### Codepen PageSpeed Results:
 
 ![](test/pagespeed-codepen.png)
