@@ -154,6 +154,21 @@ const ElTag = {
     } else {
       PROPERTY_MAP.set(element, { render: realProperties.render })
     }
+    
+    if (realProperties.every) {
+      for (let delay in realProperties.every) {
+        setInterval(() => {
+          let actions = realProperties.every[delay];
+          if (!Array.isArray(actions)) {
+            actions = [actions];
+          }
+          const context = STATE_MAP.get(PROPERTY_MAP.get(element).ctx);
+          for (let action of actions) {
+            _runInContext(action, _createContextProxy(element, { ref: element }, context));
+          }
+        }, delay);
+      }
+    }
 
     if (!realProperties.style) {
       realProperties.style = {};
