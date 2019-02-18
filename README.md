@@ -56,7 +56,7 @@ JSDelivr kindly hosts this script [here](https://www.jsdelivr.com/package/gh/TSe
 
 ### Example usage 2:
 
-[codepen](https://codepen.io/tsedlar/pen/GzzWLy?editors=1000
+[codepen](https://codepen.io/tsedlar/pen/GzzWLy?editors=1000)
 
 ```html
 <script>
