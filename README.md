@@ -69,7 +69,11 @@ JSDelivr kindly hosts this script [here](https://www.jsdelivr.com/package/gh/TSe
       every: {
         1000: () => this.setState({ ctr: this.state.ctr + 1 })
       },
-      render: () => this.state.ctr
+      render: () => this.state.ctr,
+      actions: {
+        showCtr: () => alert(this.state.ctr)
+      },
+      onclick: () => this.actions.showCtr()
     })
   ]);
 
@@ -84,6 +88,10 @@ every: {
   1000: [fn1, fn2, () => { /* fn2 */ }]
 }
 ```
+
+### Other Methods:
+- `oninit`
+- `onrender`
 
 ### Codepen PageSpeed Results:
 
