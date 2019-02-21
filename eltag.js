@@ -1,29 +1,29 @@
 /* retrieved from https://www.w3schools.com/tags/ */
 const ELTAG_ELEMENT_TAGS = [
-  'a', 'abbr', 'acronym', 'address', 'applet', 'area', 'article', 'aside', 'audio', 'b', 'base', 'basefont', 
-  'bdi', 'bdo', 'big', 'blockquote', 'body', 'br', 'button', 'canvas', 'caption', 'center', 'cite', 'code', 
-  'col', 'colgroup', 'data', 'datalist', 'dd', 'del', 'details', 'dfn', 'dialog', 'dir', 'div', 'dl', 'dt', 
-  'em', 'embed', 'fieldset', 'figcaption', 'figure', 'font', 'footer', 'form', 'frame', 'frameset', 'h1', 
-  'h2', 'h3', 'h4', 'h5', 'h6', 'head', 'header', 'hr', 'html', 'i', 'iframe', 'img', 'input', 'ins', 'kbd', 
-  'label', 'legend', 'li', 'link', 'main', 'map', 'mark', 'meta', 'meter', 'nav', 'noframes', 'noscript', 
-  'object', 'ol', 'optgroup', 'option', 'output', 'p', 'param', 'picture', 'pre', 'progress', 'q', 'rp', 
-  'rt', 'ruby', 's', 'samp', 'script', 'section', 'select', 'small', 'source', 'span', 'strike', 'strong', 
-  'style', 'sub', 'summary', 'sup', 'svg', 'table', 'tbody', 'td', 'template', 'textarea', 'tfoot', 'th', 
+  'a', 'abbr', 'acronym', 'address', 'applet', 'area', 'article', 'aside', 'audio', 'b', 'base', 'basefont',
+  'bdi', 'bdo', 'big', 'blockquote', 'body', 'br', 'button', 'canvas', 'caption', 'center', 'cite', 'code',
+  'col', 'colgroup', 'data', 'datalist', 'dd', 'del', 'details', 'dfn', 'dialog', 'dir', 'div', 'dl', 'dt',
+  'em', 'embed', 'fieldset', 'figcaption', 'figure', 'font', 'footer', 'form', 'frame', 'frameset', 'h1',
+  'h2', 'h3', 'h4', 'h5', 'h6', 'head', 'header', 'hr', 'html', 'i', 'iframe', 'img', 'input', 'ins', 'kbd',
+  'label', 'legend', 'li', 'link', 'main', 'map', 'mark', 'meta', 'meter', 'nav', 'noframes', 'noscript',
+  'object', 'ol', 'optgroup', 'option', 'output', 'p', 'param', 'picture', 'pre', 'progress', 'q', 'rp',
+  'rt', 'ruby', 's', 'samp', 'script', 'section', 'select', 'small', 'source', 'span', 'strike', 'strong',
+  'style', 'sub', 'summary', 'sup', 'svg', 'table', 'tbody', 'td', 'template', 'textarea', 'tfoot', 'th',
   'thead', 'time', 'title', 'tr', 'track', 'tt', 'u', 'ul', 'var', 'video', 'wbr'
 ];
 
 /* retrieved from https://www.w3schools.com/jsref/dom_obj_event.asp */
 const ELTAG_ELEMENT_TRIGGERS = [
-  'onabort', 'onafterprint', 'onanimationend', 'onanimationiteration', 'onanimationstart', 'onbeforeprint', 
-  'onbeforeunload', 'onblur', 'oncanplay', 'oncanplaythrough', 'onchange', 'onclick', 'oncontextmenu', 'oncopy', 
-  'oncut', 'ondblclick', 'ondrag', 'ondragend', 'ondragenter', 'ondragleave', 'ondragover', 'ondragstart', 
-  'ondrop', 'ondurationchange', 'onended', 'onerror', 'onfocus', 'onfocusin', 'onfocusout', 'onfullscreenchange', 
-  'onfullscreenerror', 'onhashchange', 'oninput', 'oninvalid', 'onkeydown', 'onkeypress', 'onkeyup', 'onload', 
-  'onloadeddata', 'onloadedmetadata', 'onloadstart', 'onmessage', 'onmousedown', 'onmouseenter', 'onmouseleave', 
-  'onmousemove', 'onmouseover', 'onmouseout', 'onmouseup', 'onmousewheel', 'onoffline', 'ononline', 'onopen', 
-  'onpagehide', 'onpageshow', 'onpaste', 'onpause', 'onplay', 'onplaying', 'onpopstate', 'onprogress', 
-  'onratechange', 'onresize', 'onreset', 'onscroll', 'onsearch', 'onseeked', 'onseeking', 'onselect', 'onshow', 
-  'onstalled', 'onstorage', 'onsubmit', 'onsuspend', 'ontimeupdate', 'ontoggle', 'ontouchcancel', 'ontouchend', 
+  'onabort', 'onafterprint', 'onanimationend', 'onanimationiteration', 'onanimationstart', 'onbeforeprint',
+  'onbeforeunload', 'onblur', 'oncanplay', 'oncanplaythrough', 'onchange', 'onclick', 'oncontextmenu', 'oncopy',
+  'oncut', 'ondblclick', 'ondrag', 'ondragend', 'ondragenter', 'ondragleave', 'ondragover', 'ondragstart',
+  'ondrop', 'ondurationchange', 'onended', 'onerror', 'onfocus', 'onfocusin', 'onfocusout', 'onfullscreenchange',
+  'onfullscreenerror', 'onhashchange', 'oninput', 'oninvalid', 'onkeydown', 'onkeypress', 'onkeyup', 'onload',
+  'onloadeddata', 'onloadedmetadata', 'onloadstart', 'onmessage', 'onmousedown', 'onmouseenter', 'onmouseleave',
+  'onmousemove', 'onmouseover', 'onmouseout', 'onmouseup', 'onmousewheel', 'onoffline', 'ononline', 'onopen',
+  'onpagehide', 'onpageshow', 'onpaste', 'onpause', 'onplay', 'onplaying', 'onpopstate', 'onprogress',
+  'onratechange', 'onresize', 'onreset', 'onscroll', 'onsearch', 'onseeked', 'onseeking', 'onselect', 'onshow',
+  'onstalled', 'onstorage', 'onsubmit', 'onsuspend', 'ontimeupdate', 'ontoggle', 'ontouchcancel', 'ontouchend',
   'ontouchmove', 'ontouchstart', 'ontransitionend', 'onunload', 'onvolumechange', 'onwaiting', 'onwheel'
 ];
 
@@ -40,7 +40,7 @@ const _visitTree = (element, fn) => {
 
 const _renderTree = (element) => _visitTree(element, (e) => _rerender(e));
 
-const _createContextProxy = (element, ctx, owner=null) => {
+const _createContextProxy = (element, ctx, owner = null) => {
   const proxy = new Proxy(ctx, {
     get: (target, property) => {
       if (property == 'parent') {
@@ -51,7 +51,7 @@ const _createContextProxy = (element, ctx, owner=null) => {
       }
       return owner ? (owner[property] ? owner[property] : target[property]) : target[property];
     },
-    
+
     set: (target, property, value) => {
       if (owner) {
         owner[property] = value;
@@ -61,7 +61,7 @@ const _createContextProxy = (element, ctx, owner=null) => {
       return value;
     }
   });
-  
+
   proxy.setState = (updated) => {
     if (proxy.state) {
       for (let key in proxy.state) {
@@ -76,7 +76,7 @@ const _createContextProxy = (element, ctx, owner=null) => {
       _renderTree(props.ctx);
     }
   };
-  
+
   return proxy;
 };
 
@@ -130,7 +130,7 @@ const _initProps = () => {
 };
 
 const _runInContext = (fn, context, ...args) => {
-  let fx = fn.hasOwnProperty('prototype') ? fn : function() { return eval('(' + fn + ')').apply(context, args); }
+  let fx = fn.hasOwnProperty('prototype') ? fn : function () { return eval('(' + fn + ')').apply(context, args); }
   return fx.apply(context, args);
 };
 
@@ -142,7 +142,7 @@ const ElTag = {
     target.appendChild(element);
   },
 
-  el: (tag, properties={}, children=[]) => {
+  el: (tag, properties = {}, children = []) => {
 
     const realProperties = Array.isArray(properties) ? {} : properties;
     let realChildren = Array.isArray(properties) ? properties : (children || []);
@@ -159,14 +159,23 @@ const ElTag = {
     }
 
     if (realProperties.state) {
-      PROPERTY_MAP.set(element, { 
+      PROPERTY_MAP.set(element, {
         ctx: element,
         rendered: false,
         render: realProperties.render,
         oninit: realProperties.oninit,
         onrender: realProperties.onrender
       });
-      STATE_MAP.set(element, _createContextProxy(element, { state: realProperties.state }));
+
+      for (let actionKey in realProperties.actions) {
+        const action = realProperties.actions[actionKey];
+        realProperties.actions[actionKey] = (...args) => {
+          const context = STATE_MAP.get(PROPERTY_MAP.get(element).ctx);
+          _runInContext(action, context, args);
+        };
+      }
+
+      STATE_MAP.set(element, _createContextProxy(element, { state: realProperties.state, actions: realProperties.actions }));
     } else {
       PROPERTY_MAP.set(element, {
         rendered: false,
@@ -175,29 +184,19 @@ const ElTag = {
         onrender: realProperties.onrender
       });
     }
-    
+
     if (realProperties.every) {
       for (let delay in realProperties.every) {
         setInterval(() => {
-          let actions = realProperties.every[delay];
-          if (!Array.isArray(actions)) {
-            actions = [actions];
+          let delayActions = realProperties.every[delay];
+          if (!Array.isArray(delayActions)) {
+            delayActions = [delayActions];
           }
           const context = STATE_MAP.get(PROPERTY_MAP.get(element).ctx);
-          for (let action of actions) {
-            _runInContext(action, _createContextProxy(element, { ref: element, actions: realProperties.actions }, context));
+          for (let action of delayActions) {
+            _runInContext(action, _createContextProxy(element, { ref: element }, context));
           }
         }, delay);
-      }
-    }
-    
-    if (realProperties.actions) {
-      for (let actionKey in realProperties.actions) {
-        const action = realProperties.actions[actionKey];
-        realProperties.actions[actionKey] = (...args) => {
-          const context = STATE_MAP.get(PROPERTY_MAP.get(element).ctx);
-          _runInContext(action, _createContextProxy(element, { ref: element }, context), args);
-        };
       }
     }
 
@@ -210,7 +209,7 @@ const ElTag = {
         const fn = realProperties[trigger];
         realProperties[trigger] = (...args) => {
           const context = STATE_MAP.get(PROPERTY_MAP.get(element).ctx);
-          _runInContext(fn, _createContextProxy(element, { ref: element, actions: realProperties.actions }, context), args);
+          _runInContext(fn, _createContextProxy(element, { ref: element }, context), args);
         };
       }
     }
@@ -218,7 +217,7 @@ const ElTag = {
     for (let property in realProperties) {
       if (property === 'style' && Object.keys(realProperties.style).length == 0) {
         continue;
-      } 
+      }
       element[property] = realProperties[property];
     }
 
@@ -232,7 +231,7 @@ const ElTag = {
 
     if (Array.isArray(realChildren)) {
       for (let child of realChildren) {
-        if (child) { 
+        if (child) {
           if (typeof child === 'string') {
             element.appendChild(document.createTextNode(child));
           } else {
@@ -243,11 +242,11 @@ const ElTag = {
     } else if (realChildren) {
       element.appendChild(document.createTextNode(realChildren));
     }
-    
+
     return element
   },
 
-  app: (properties={}, children=[]) => ElTag.el('div', properties, children),
+  app: (properties = {}, children = []) => ElTag.el('div', properties, children),
 
   range: (startInclusive, endExclusive, resolver) => {
     let elements = [];
@@ -259,5 +258,5 @@ const ElTag = {
 };
 
 for (let tag of ELTAG_ELEMENT_TAGS) {
-  ElTag[tag] = (properties={}, children=[]) => ElTag.el(tag, properties, children);
+  ElTag[tag] = (properties = {}, children = []) => ElTag.el(tag, properties, children);
 }
