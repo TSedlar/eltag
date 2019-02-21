@@ -58,11 +58,11 @@ const _updateVisibility = (e) => {
       }
     }
   }
-  return e.style.display !== 'none';
+  return e.style.display !== 'none' && e.style.display !== 'hidden';
 }
 
 const _renderTree = (element) => _visitTree(element, (e) => {
-  if (e.style.display === 'none') {
+  if (e.style.display === 'none' || e.style.display === 'hidden') {
     if (!_updateVisibility(e)) {
       return false;
     }
@@ -112,15 +112,21 @@ const _createContextProxy = (element, ctx, owner = null) => {
 };
 
 const _rerender = (element) => {
+  if (element.style.display === 'none' || element.style.display === 'hidden') {
+    return;
+  }
   const props = PROPERTY_MAP.get(element);
   if (props && props.ctx) {
     const state = STATE_MAP.get(props.ctx);
     if (state) {
-      if (props.condition && !_runInContext(props.condition, state)) {
-        element.style.display = 'none';
-        return;
+      if (props.condition) {
+        if (!_runInContext(props.condition, state)) {
+          element.style.display = 'none';
+          return;
+        } else {
+          element.style.display = _disp(element.tagName);
+        }
       }
-      element.style.display = _disp(element.tagName);
       if (props.render) {
         while (element.firstChild) {
           element.removeChild(element.firstChild);
