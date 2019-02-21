@@ -51,9 +51,7 @@ const _visitTree = (element, fn) => {
 const _updateVisibility = (e) => {
   const props = PROPERTY_MAP.get(e);
   if (props) {
-    if (!props.condition) {
-      e.style.display = _disp(e.tagName);
-    } else {
+    if (props.condition) {
       const state = STATE_MAP.get(props.ctx);
       if (state) {
         e.style.display = _runInContext(props.condition, state) ? _disp(e.tagName) : 'none';
