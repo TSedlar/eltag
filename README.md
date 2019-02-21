@@ -93,13 +93,7 @@ every: {
 - `oninit`
 - `onrender`
 
-### Codepen PageSpeed Results:
-
-![](test/pagespeed-codepen.png)
-
-![](test/pagespeed-codepen2.png)
-
-### Personal PageSpeed Result:
+### PageSpeed Results:
 
 [IKJP page source](https://github.com/TSedlar/tsedlar.github.io/blob/master/ikjp/index.html)
 
