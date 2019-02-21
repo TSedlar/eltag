@@ -194,8 +194,8 @@ const ElTag = {
     if (realProperties.actions) {
       for (let actionKey in realProperties.actions) {
         const action = realProperties.actions[actionKey];
-        const context = STATE_MAP.get(PROPERTY_MAP.get(element).ctx);
         realProperties.actions[actionKey] = (...args) => {
+          const context = STATE_MAP.get(PROPERTY_MAP.get(element).ctx);
           _runInContext(action, _createContextProxy(element, { ref: element }, context), args);
         };
       }
