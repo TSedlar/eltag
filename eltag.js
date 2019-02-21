@@ -90,6 +90,15 @@ const _rerender = (element) => {
       }
       const render = _runInContext(props.render, state);
       element.appendChild(document.createTextNode(render));
+      if (!props.rendered) {
+        props.rendered = true;
+        if (props.oninit) {
+          _runInContext(props.oninit, state);
+        }
+      }
+      if (props.onrender) {
+        _runInContext(props.onrender, state);
+      }
     }
   }
 };
@@ -120,8 +129,9 @@ const _initProps = () => {
   INIT_LIST.length = 0;
 };
 
-const _runInContext = (fn, context) => {
-  return (fn.hasOwnProperty('prototype') ? fn : (function() { return eval('(' + fn + ')()'); })).call(context);
+const _runInContext = (fn, context, ...args) => {
+  let fx = fn.hasOwnProperty('prototype') ? fn : function() { return eval('(' + fn + ')').apply(context, args); }
+  return fx.apply(context, args);
 };
 
 const ElTag = {
@@ -149,10 +159,21 @@ const ElTag = {
     }
 
     if (realProperties.state) {
-      PROPERTY_MAP.set(element, { ctx: element, render: realProperties.render });
+      PROPERTY_MAP.set(element, { 
+        ctx: element,
+        rendered: false,
+        render: realProperties.render,
+        oninit: realProperties.oninit,
+        onrender: realProperties.onrender
+      });
       STATE_MAP.set(element, _createContextProxy(element, { state: realProperties.state }));
     } else {
-      PROPERTY_MAP.set(element, { render: realProperties.render })
+      PROPERTY_MAP.set(element, {
+        rendered: false,
+        render: realProperties.render,
+        oninit: realProperties.oninit,
+        onrender: realProperties.onrender
+      });
     }
     
     if (realProperties.every) {
@@ -164,9 +185,19 @@ const ElTag = {
           }
           const context = STATE_MAP.get(PROPERTY_MAP.get(element).ctx);
           for (let action of actions) {
-            _runInContext(action, _createContextProxy(element, { ref: element }, context));
+            _runInContext(action, _createContextProxy(element, { ref: element, actions: realProperties.actions }, context));
           }
         }, delay);
+      }
+    }
+    
+    if (realProperties.actions) {
+      for (let actionKey in realProperties.actions) {
+        const action = realProperties.actions[actionKey];
+        const context = STATE_MAP.get(PROPERTY_MAP.get(element).ctx);
+        realProperties.actions[actionKey] = (...args) => {
+          _runInContext(action, _createContextProxy(element, { ref: element }, context), args);
+        };
       }
     }
 
@@ -177,9 +208,9 @@ const ElTag = {
     for (let trigger of ELTAG_ELEMENT_TRIGGERS) {
       if (realProperties[trigger]) {
         const fn = realProperties[trigger];
-        realProperties[trigger] = () => {
+        realProperties[trigger] = (...args) => {
           const context = STATE_MAP.get(PROPERTY_MAP.get(element).ctx);
-          _runInContext(fn, _createContextProxy(element, { ref: element }, context));
+          _runInContext(fn, _createContextProxy(element, { ref: element, actions: realProperties.actions }, context), args);
         };
       }
     }
