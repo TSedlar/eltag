@@ -100,6 +100,12 @@ every: {
 ![](test/pagespeed-codepen2.png)
 
 ### Personal PageSpeed Result:
-[Test page source](https://github.com/TSedlar/tsedlar.github.io/blob/master/index.html)
+
+[IKJP page source](https://github.com/TSedlar/tsedlar.github.io/blob/master/ikjp/index.html)
+
+![](test/pagespeed-ikjp.png)
+
+
+[Portfolio page source](https://github.com/TSedlar/tsedlar.github.io/blob/master/index.html)
 
 ![](test/pagespeed-sedlar.png)
