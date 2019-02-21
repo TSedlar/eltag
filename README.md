@@ -8,7 +8,7 @@
 
 A blazing fast HTML Tag Component Micro-framework
 
-Supports all of the below in ~5kb!:
+Supports all of the below in ~6kb!:
 - Component states
 - Parent component states
 - All style variables
@@ -19,7 +19,7 @@ Supports all of the below in ~5kb!:
 JSDelivr kindly hosts this script [here](https://www.jsdelivr.com/package/gh/TSedlar/eltag)
 
 ```html
-<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/TSedlar/eltag@1.0.5/eltag.min.js'>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/TSedlar/eltag@1.0.6/eltag.min.js'>
 ```
 
 ### Example usage:
