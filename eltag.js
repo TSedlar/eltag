@@ -181,7 +181,7 @@ const _initProps = () => {
 
 const _disp = (tag) => INLINE_ELEMENTS.includes(tag.toLowerCase()) ? 'inline' : 'block';
 
-const _runInContext = (fn, context, ...args) => {
+const _runInContext = (fn, context, args) => {
   let fx = fn.hasOwnProperty('prototype') ? fn : function () { return eval('(' + fn + ')').apply(context, args); }
   return fx.apply(context, args);
 };
