@@ -99,6 +99,10 @@ every: {
 
 ![](test/pagespeed-sedlar.png)
 
+[kr-hangul page source](https://github.com/TSedlar/tsedlar.github.io/blob/master/korean/hangul/index.html)
+
+![](test/pagespeed-kr-hangul.png)
+
 [IKJP page source](https://github.com/TSedlar/tsedlar.github.io/blob/master/ikjp/index.html)
 
 ![](test/pagespeed-ikjp.png)
