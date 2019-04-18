@@ -157,7 +157,6 @@ const _findParentContext = (element) => {
     const parent = PROPERTY_MAP.get(current);
     if (parent && parent.ctx) {
       return parent.ctx;
-      break;
     }
   }
   return null;
@@ -208,7 +207,7 @@ const ElTag = {
   el: (tag, properties = {}, children = []) => {
 
     const realProperties = Array.isArray(properties) ? {} : properties;
-    let realChildren = Array.isArray(properties) ? properties : (children || []);
+    let realChildren = Array.isArray(properties) ? properties : (children != null ? children : []);
 
     const element = document.createElement(tag);
     INIT_LIST.push(element);
@@ -288,7 +287,7 @@ const ElTag = {
 
     if (Array.isArray(realChildren)) {
       for (let child of realChildren) {
-        if (child !== null) {
+        if (child) {
           if (typeof child === 'string') {
             element.appendChild(document.createTextNode(child));
           } else {
@@ -296,7 +295,7 @@ const ElTag = {
           }
         }
       }
-    } else if (realChildren) {
+    } else {
       element.appendChild(document.createTextNode(realChildren));
     }
 
