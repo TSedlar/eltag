@@ -36,8 +36,8 @@ const INLINE_ELEMENTS = [
   'video', 'wbr'
 ]
 
-const PROPERTY_MAP = new Map();
-const STATE_MAP = new Map();
+const PROPERTY_MAP = new WeakMap();
+const STATE_MAP = new WeakMap();
 const INIT_LIST = [];
 
 const _visitTree = (element, fn) => {
