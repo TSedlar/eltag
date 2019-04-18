@@ -319,7 +319,9 @@ const ElTag = {
     return elements;
   },
 
-  range: (startInclusive, endExclusive, resolver) => ElTag.rangeJump(startInclusive, endExclusive, 1, resolver)
+  range: (startInclusive, endExclusive, resolver) => ElTag.rangeJump(startInclusive, endExclusive, 1, resolver),
+
+  each: (array, resolver) => array.map(item => resolver(item))
 };
 
 for (let tag of ELTAG_ELEMENT_TAGS) {
