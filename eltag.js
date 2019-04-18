@@ -157,7 +157,6 @@ const _findParentContext = (element) => {
     const parent = PROPERTY_MAP.get(current);
     if (parent && parent.ctx) {
       return parent.ctx;
-      break;
     }
   }
   return null;
