@@ -106,3 +106,7 @@ every: {
 [IKJP page source](https://github.com/TSedlar/tsedlar.github.io/blob/master/ikjp/index.html)
 
 ![](test/pagespeed-ikjp.png)
+
+
+### Other Examples
+- [Basic calculator](https://codepen.io/finnthompson/pen/wZmKYb) by [Finn Thompson](https://github.com/FThompson)
