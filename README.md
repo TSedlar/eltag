@@ -19,7 +19,7 @@ Supports all of the below in ~6kb!:
 JSDelivr kindly hosts this script [here](https://www.jsdelivr.com/package/gh/TSedlar/eltag)
 
 ```html
-<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/TSedlar/eltag@1.1.5/eltag.min.js'>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/TSedlar/eltag@1.1.6/eltag.min.js'>
 ```
 
 ### Example usage:
