@@ -182,8 +182,10 @@ const _initProps = () => {
 const _disp = (tag) => INLINE_ELEMENTS.includes(tag.toLowerCase()) ? 'inline' : 'block';
 
 const _runInContext = (fn, context, args) => {
-  let fx = fn.hasOwnProperty('prototype') ? fn : function () { return eval('(' + fn + ')').apply(context, args); }
-  return fx.apply(context, args);
+  if (fn && fn.hasOwnProperty) {
+    let fx = fn.hasOwnProperty('prototype') ? fn : function () { return eval('(' + fn + ')').apply(context, args); }
+    return fx.apply(context, args);
+  }
 };
 
 const ElTag = {
@@ -286,7 +288,7 @@ const ElTag = {
 
     if (Array.isArray(realChildren)) {
       for (let child of realChildren) {
-        if (child) {
+        if (child !== null) {
           if (typeof child === 'string') {
             element.appendChild(document.createTextNode(child));
           } else {
@@ -303,13 +305,22 @@ const ElTag = {
 
   app: (properties = {}, children = []) => ElTag.el('div', properties, children),
 
-  range: (startInclusive, endExclusive, resolver) => {
+  rangeJump: (startInclusive, endExclusive, step=1, resolver) => {
+    if (startInclusive > endExclusive) {
+      step *= -1;
+      [startInclusive, endExclusive] = [endExclusive, startInclusive];
+    }
+
     let elements = [];
-    for (let i = startInclusive; i < endExclusive; i++) {
+
+    for (let i = startInclusive; i < endExclusive; i += step) {
       elements.push(resolver(i));
     }
+
     return elements;
-  }
+  },
+
+  range: (startInclusive, endExclusive, resolver) => ElTag.rangeJump(startInclusive, endExclusive, 1, resolver)
 };
 
 for (let tag of ELTAG_ELEMENT_TAGS) {
